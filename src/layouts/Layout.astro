@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      body {
+        font-family: "JetBrains Mono", monospace;
+        background-color: #ffffff;
+        color: #000000;
+        margin: 0;
+        padding: 100px 20px;
+        display: flex;
+        justify-content: center;
+        line-height: 1.5;
+      }
+      main {
+        text-align: center;
+        max-width: 900px;
+        width: 100%;
+      }
+      header {
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: 2.2rem;
+        font-weight: 400;
+        margin: 0 0 5px 0;
+        letter-spacing: -0.5px;
+      }
+      .subtitle {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 2px 0;
+        color: #333;
+      }
+      section {
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li,
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 6px 0;
+      }
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .socials a {
+        color: #000000;
+        text-decoration: none;
+      }
+      .company-link {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px dashed #999;
+        transition: all 0.2s ease;
+        padding: 0 2px;
+      }
+      .company-link:hover {
+        border-bottom: 1px solid #000;
+        background-color: #f5f5f5;
+        color: #000;
+      }
+      svg {
+        width: 44px;
+        height: 44px;
+      }
+      nav {
+        margin-bottom: 40px;
+      }
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 10px;
+        border-bottom: 1px solid transparent;
+      }
+      nav a:hover {
+        border-bottom: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/jobs/business-analyst">Business Analyst</a>
+      </nav>
+      <slot />
+    </main>
+  </body>
+</html>
